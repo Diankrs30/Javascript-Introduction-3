@@ -24,7 +24,7 @@ const workDay = (day) =>
       console.log(error.message);
     });
 
-workDay("senin");
+// workDay("senin");
 
 // penjelasan
 /*
@@ -36,19 +36,17 @@ then dan catch
 // try catch
 async function cekWorkDay(day, cekFunc) {
   try {
+    // validasi
     if (typeof cekFunc !== "function") throw new Error("Invalid! Data harus function.");
     if (typeof day !== "string") throw new Error("Invalid! Data harus string.");
+
     const result = await cekFunc(day);
-    return `${result} adalah hari kerja.`;
+    console.log(`${result} adalah hari kerja.`);
   } catch (error) {
-    return (error.message);
+    console.log(error.message);
   }
 }
-
-const day = async () => {
-  console.log(await cekWorkDay("sabtu", cekHariKerja));
-};
-day();
+cekWorkDay("sabtu", "cekHariKerja");
 
 // penjelasan
 /*

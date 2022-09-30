@@ -23,8 +23,8 @@ const getMonth = (callback) => {
   }, 4000);
 };
 
-const showMonth = (error, element) => {
-  if (element.length > 0) {
+const showMonth = (error, element) => {               // untuk pengecekan error gunakan variabel error untuk melakukan pengondisian
+  if (!error) {
     let show = "";
     element.map((month) => show += month + " ");
     console.log(show);
